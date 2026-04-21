@@ -44,11 +44,11 @@ const Register = ({ onAuth }) => {
           </div>
           <div className="pulse-ring" />
           <div className="mini-bars">
-            <i style={{ height: '54%' }} />
-            <i style={{ height: '82%' }} />
-            <i style={{ height: '48%' }} />
-            <i style={{ height: '76%' }} />
-            <i style={{ height: '62%' }} />
+            <i style={{ height: '46%' }} />
+            <i style={{ height: '72%' }} />
+            <i style={{ height: '58%' }} />
+            <i style={{ height: '86%' }} />
+            <i style={{ height: '64%' }} />
           </div>
         </div>
 
@@ -62,26 +62,41 @@ const Register = ({ onAuth }) => {
           <form onSubmit={handleSubmit} className="form">
             <label>
               Name
-              <input name="name" value={form.name} onChange={updateField} required />
+              <input
+                name="name"
+                type="text"
+                value={form.name}
+                onChange={updateField}
+                required
+              />
             </label>
+
             <label>
               Email
-              <input name="email" type="email" value={form.email} onChange={updateField} required />
+              <input
+                name="email"
+                type="email"
+                value={form.email}
+                onChange={updateField}
+                required
+              />
             </label>
+
             <label>
               Password
               <input
                 name="password"
                 type="password"
-                minLength="6"
                 value={form.password}
                 onChange={updateField}
                 required
               />
             </label>
+
             {error && <p className="error">{error}</p>}
+
             <button type="submit" disabled={loading}>
-              <span>{loading ? 'Creating...' : 'Register'}</span>
+              <span>{loading ? 'Registering...' : 'Register'}</span>
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h12m-5-5 5 5-5 5" />
               </svg>
@@ -89,7 +104,7 @@ const Register = ({ onAuth }) => {
           </form>
 
           <p className="switch-link">
-            Already registered? <Link to="/login">Login</Link>
+            Already have an account? <Link to="/login">Login</Link>
           </p>
         </div>
       </section>

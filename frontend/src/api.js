@@ -4,6 +4,7 @@ export const getToken = () => localStorage.getItem('token');
 
 export const request = async (path, options = {}) => {
   const token = getToken();
+
   const response = await fetch(`${API_URL}${path}`, {
     ...options,
     headers: {

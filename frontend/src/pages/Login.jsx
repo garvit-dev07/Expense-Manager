@@ -62,13 +62,28 @@ const Login = ({ onAuth }) => {
           <form onSubmit={handleSubmit} className="form">
             <label>
               Email
-              <input name="email" type="email" value={form.email} onChange={updateField} required />
+              <input
+                name="email"
+                type="email"
+                value={form.email}
+                onChange={updateField}
+                required
+              />
             </label>
+
             <label>
               Password
-              <input name="password" type="password" value={form.password} onChange={updateField} required />
+              <input
+                name="password"
+                type="password"
+                value={form.password}
+                onChange={updateField}
+                required
+              />
             </label>
+
             {error && <p className="error">{error}</p>}
+
             <button type="submit" disabled={loading}>
               <span>{loading ? 'Logging in...' : 'Login'}</span>
               <svg viewBox="0 0 24 24" aria-hidden="true">

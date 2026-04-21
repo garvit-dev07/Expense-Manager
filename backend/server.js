@@ -8,7 +8,13 @@ dotenv.config({ path: path.join(__dirname, '.env') });
 
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173' }));
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 const authRoutes = require('./routes/auth');
